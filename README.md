@@ -64,7 +64,7 @@ This web App is made with flutter web plateform.
 ### 10- The app is ready to be deployed
  - Go to .gitignore file comment the line /build/ then commit to the project repo.
  - Push your app to github or gitlab.
- - then you can use a service like netlify to deploy the app online.
+ - then you can use a service like [Netlify](https://www.netlify.com) to deploy the app online.
  - when selecting the repo make sure the deployment folder is >>build/web<<
   
    
