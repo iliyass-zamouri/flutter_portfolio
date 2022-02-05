@@ -6,7 +6,7 @@ This web App is made with flutter web plateform.
 
 [visit iliyass-zamouri.ga](https://iliyass-zamouri.ga)
 
-##Tips to deploy the flutter web version.
+# Tips to deploy the flutter web version.
 
 ### 1- Fist the app should be web friendly.
 - Making the app responsive for diffrent view ports.
