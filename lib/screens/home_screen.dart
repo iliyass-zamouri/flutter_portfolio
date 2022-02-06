@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_portfolio/data/data.dart';
 import 'package:flutter_portfolio/models/socialmedia.dart';
 import 'package:flutter_portfolio/screens/about_screen.dart';
@@ -33,6 +34,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    Brightness preferedBrightness =
+        SchedulerBinding.instance!.window.platformBrightness;
+    if (preferedBrightness == Brightness.light) {
+      context.read<StateProvider>().toggleColor();
+    }
   }
 
   @override
