@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/state_provider.dart';
-import 'package:flutter_portfolio/styles/text_styles.dart';
+import 'package:flutter_portfolio/styles/styles.dart';
 import 'package:provider/provider.dart';
 
 class BoxContainer extends StatelessWidget {
@@ -14,7 +14,7 @@ class BoxContainer extends StatelessWidget {
     MediaQueryData mediaData = MediaQuery.of(context);
     StateProvider provider = Provider.of<StateProvider>(context, listen: true);
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       margin: const EdgeInsets.all(10),
       width: mediaData.size.width <= 720
           ? mediaData.size.width

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/data/data.dart';
 import 'package:flutter_portfolio/screens/profile_screen.dart';
 import 'package:flutter_portfolio/state_provider.dart';
-import 'package:flutter_portfolio/styles/text_styles.dart';
+import 'package:flutter_portfolio/styles/styles.dart';
 import 'package:flutter_portfolio/widgets/text_button.dart';
 import 'package:provider/provider.dart';
 
@@ -50,7 +50,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   style: Styles.tileTitle.copyWith(
                       color: provider.colorPalette.thirdColor,
                       fontSize: 18,
-                      fontWeight: FontWeight.w600)),
+                      fontWeight: FontWeight.w400)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -70,7 +70,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   if (mediaData.size.width < 720)
                     PopupMenuButton<String>(
                         color: provider.colorPalette.secondColor,
-                        elevation: 20,
+                        elevation: 2,
                         enabled: true,
                         icon: Icon(Icons.more_vert,
                             color: provider.colorPalette.thirdColor),

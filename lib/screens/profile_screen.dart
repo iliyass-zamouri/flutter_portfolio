@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/data/data.dart';
+import 'package:flutter_portfolio/models/enterprise.dart';
 import 'package:flutter_portfolio/state_provider.dart';
-import 'package:flutter_portfolio/styles/text_styles.dart';
+import 'package:flutter_portfolio/styles/styles.dart';
 import 'package:flutter_portfolio/widgets/box_container.dart';
 import 'package:flutter_portfolio/widgets/skills_widget.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -48,8 +50,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       borderRadius: BorderRadius.circular(50),
                       child: Image.network(
                         user.imageURL,
-                        height: 100,
-                        width: 100,
+                        height: 80,
+                        width: 80,
                       ),
                     ),
                   ),
@@ -63,29 +65,35 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: Styles.title.copyWith(
                             color: provider.colorPalette.thirdColor,
                             fontSize: 30,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w400,
                             letterSpacing: 1.1),
                       ),
                       Text(
                         user.profession,
                         style: Styles.timeTextStyle.copyWith(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
                             color: provider.colorPalette.mainColor,
                             letterSpacing: 1.1),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(user.countryImojie),
+                          Icon(FontAwesomeIcons.building,
+                              color: provider.colorPalette.thirdColor,
+                              size: 14),
                           const SizedBox(width: 5),
-                          Text(user.countryName,
-                              style: Styles.bottomNavText.copyWith(
-                                  color: provider.colorPalette.thirdColor,
-                                  fontSize: 14))
+                          Padding(
+                            padding: const EdgeInsets.only(top: 2),
+                            child: Text(
+                                "${user.workedAt!.last.name} • ${user.workedAt!.last.contract.getName()}",
+                                style: Styles.bottomNavText.copyWith(
+                                    color: provider.colorPalette.thirdColor,
+                                    fontSize: 14)),
+                          )
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ],

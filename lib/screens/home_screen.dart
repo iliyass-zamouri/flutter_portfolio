@@ -5,7 +5,7 @@ import 'package:flutter_portfolio/data/data.dart';
 import 'package:flutter_portfolio/models/socialmedia.dart';
 import 'package:flutter_portfolio/screens/about_screen.dart';
 import 'package:flutter_portfolio/state_provider.dart';
-import 'package:flutter_portfolio/styles/text_styles.dart';
+import 'package:flutter_portfolio/styles/styles.dart';
 import 'package:flutter_portfolio/widgets/button.dart';
 import 'package:flutter_portfolio/widgets/text_button.dart';
 // ignore: import_of_legacy_library_into_null_safe
@@ -13,7 +13,6 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
-
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -34,17 +33,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    final ValueNotifier<Brightness> preferedBrightnessListener =
-        ValueNotifier<Brightness>(
-            SchedulerBinding.instance!.window.platformBrightness);
 
-    preferedBrightnessListener.addListener(() {
-      Brightness preferedBrightness =
-          SchedulerBinding.instance!.window.platformBrightness;
-      if (preferedBrightness == Brightness.light) {
-        context.read<StateProvider>().toggleColor();
-      }
-    });
+    Brightness preferedBrightness =
+        SchedulerBinding.instance!.window.platformBrightness;
+    if (preferedBrightness == Brightness.light) {
+      context.read<StateProvider>().toggleColor();
+    }
   }
 
   @override
@@ -248,8 +242,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         "${user.fname} ${user.lname}".toUpperCase(),
                         style: Styles.title.copyWith(
                             color: provider.colorPalette.thirdColor,
-                            fontStyle: FontStyle.italic,
-                            fontWeight: FontWeight.bold,
+                            // fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.w400,
                             letterSpacing: 1.1),
                       ),
                       Text(
@@ -280,7 +274,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Icon(
                         provider.isDark
                             ? Icons.wb_sunny_rounded
-                            : FontAwesomeIcons.moon,
+                            : FontAwesomeIcons.solidMoon,
                         color: provider.colorPalette.thirdColor,
                       ),
                     ),

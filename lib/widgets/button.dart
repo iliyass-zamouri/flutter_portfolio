@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/state_provider.dart';
-import 'package:flutter_portfolio/styles/text_styles.dart';
+import 'package:flutter_portfolio/styles/styles.dart';
 import 'package:provider/provider.dart';
 
 class CustomIconButton extends StatelessWidget {

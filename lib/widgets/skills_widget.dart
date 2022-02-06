@@ -4,7 +4,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/models/skill.dart';
 import 'package:flutter_portfolio/state_provider.dart';
-import 'package:flutter_portfolio/styles/text_styles.dart';
+import 'package:flutter_portfolio/styles/custom_scroll.dart';
+import 'package:flutter_portfolio/styles/styles.dart';
 import 'package:provider/provider.dart';
 
 class SkillsWidget extends StatefulWidget {
@@ -68,42 +69,45 @@ class _SkillsWidgetState extends State<SkillsWidget> {
           const SizedBox(height: 5),
           Container(
             margin: const EdgeInsets.all(5),
-            child: ChipsChoice<String>.single(
-                clipBehavior: Clip.antiAlias,
-                value: selectedCategory,
-                spinnerColor: provider.colorPalette.secondColor,
-                choiceActiveStyle: C2ChoiceStyle(
-                    color: provider.colorPalette.mainColor,
-                    borderColor: provider.colorPalette.mainColor,
-                    brightness:
-                        provider.isDark ? Brightness.dark : Brightness.light),
-                choiceStyle: C2ChoiceStyle(
-                    labelStyle: Styles.miniPlayerTile
-                        .copyWith(color: provider.colorPalette.thirdColor),
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 12),
-                    brightness:
-                        provider.isDark ? Brightness.dark : Brightness.light),
-                onChanged: (choice) {
-                  if (choice == 'All') {
-                    setState(() {
-                      filtredList = widget.skills;
-                      selectedCategory = choice;
-                    });
-                  } else {
-                    filtredList = [];
-                    for (Skill element in widget.skills) {
-                      if (element.category == choice) {
-                        filtredList.add(element);
+            child: ScrollConfiguration(
+              behavior: CustomScrollBehavior(),
+              child: ChipsChoice<String>.single(
+                  clipBehavior: Clip.antiAlias,
+                  value: selectedCategory,
+                  spinnerColor: provider.colorPalette.secondColor,
+                  choiceActiveStyle: C2ChoiceStyle(
+                      color: provider.colorPalette.mainColor,
+                      borderColor: provider.colorPalette.mainColor,
+                      brightness:
+                          provider.isDark ? Brightness.dark : Brightness.light),
+                  choiceStyle: C2ChoiceStyle(
+                      labelStyle: Styles.miniPlayerTile
+                          .copyWith(color: provider.colorPalette.thirdColor),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 12),
+                      brightness:
+                          provider.isDark ? Brightness.dark : Brightness.light),
+                  onChanged: (choice) {
+                    if (choice == 'All') {
+                      setState(() {
+                        filtredList = widget.skills;
+                        selectedCategory = choice;
+                      });
+                    } else {
+                      filtredList = [];
+                      for (Skill element in widget.skills) {
+                        if (element.category == choice) {
+                          filtredList.add(element);
+                        }
                       }
+                      selectedCategory = choice;
+                      setState(() {});
                     }
-                    selectedCategory = choice;
-                    setState(() {});
-                  }
-                },
-                choiceItems: widget.categories
-                    .map((e) => C2Choice(value: e, label: e))
-                    .toList()),
+                  },
+                  choiceItems: widget.categories
+                      .map((e) => C2Choice(value: e, label: e))
+                      .toList()),
+            ),
           ),
           Flexible(
             child: ListView.separated(

@@ -1,3 +1,4 @@
+import 'package:flutter_portfolio/models/enterprise.dart';
 import 'package:flutter_portfolio/models/skill.dart';
 import 'package:flutter_portfolio/models/socialmedia.dart';
 
@@ -5,6 +6,7 @@ class User {
   final String fname;
   final String lname;
   final String profession;
+  final List<Enterprise>? workedAt;
   final String about;
   final List<Skill> skills;
   final String countryName;
@@ -15,6 +17,7 @@ class User {
       {required this.fname,
       required this.lname,
       required this.profession,
+      this.workedAt,
       required this.about,
       required this.skills,
       this.socialmedia = const [],

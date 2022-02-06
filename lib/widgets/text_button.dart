@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/styles/text_styles.dart';
+import 'package:flutter_portfolio/styles/styles.dart';
 
 class CustomTextButton extends StatelessWidget {
   final String text;
@@ -28,7 +28,7 @@ class CustomTextButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         onTap: onClick,
         child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
           decoration: BoxDecoration(
               color: Colors.transparent,
               borderRadius: BorderRadius.circular(20)),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/screens/home_screen.dart';
 import 'package:flutter_portfolio/state_provider.dart';
+import 'package:flutter_portfolio/styles/styles.dart';
 import 'package:provider/provider.dart';
 import 'package:url_strategy/url_strategy.dart';
 
@@ -21,9 +22,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Iliyass Zamouri',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: ThemeData(primarySwatch: Styles.materialColor),
         home: const HomeScreen(),
       ),
     );

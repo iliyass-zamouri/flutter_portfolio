@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/models/color_palette.dart';
-import 'package:flutter_portfolio/styles/text_styles.dart';
+import 'package:flutter_portfolio/styles/styles.dart';
 
 class StateProvider extends ChangeNotifier {
   ColorPalette colorPalette = const ColorPalette(
