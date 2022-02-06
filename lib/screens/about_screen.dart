@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/data/data.dart';
 import 'package:flutter_portfolio/screens/profile_screen.dart';
 import 'package:flutter_portfolio/state_provider.dart';
 import 'package:flutter_portfolio/styles/text_styles.dart';
@@ -26,14 +27,14 @@ class _AboutScreenState extends State<AboutScreen> {
   }
 
   late StateProvider provider;
-
+  late MediaQueryData mediaData;
   final PageController pageController = PageController();
   int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     provider = Provider.of<StateProvider>(context, listen: true);
-
+    mediaData = MediaQuery.of(context);
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,33 +55,57 @@ class _AboutScreenState extends State<AboutScreen> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  CustomTextButton(
-                    text: "Profile",
-                    mainColor: Colors.transparent,
-                    textColor: currentIndex == 0
-                        ? provider.colorPalette.mainColor
-                        : provider.colorPalette.thirdColor,
-                    onClick: () => pageController.jumpToPage(0),
-                  ),
-                  const SizedBox(width: 5),
-                  CustomTextButton(
-                    text: "Career",
-                    mainColor: Colors.transparent,
-                    textColor: currentIndex == 1
-                        ? provider.colorPalette.mainColor
-                        : provider.colorPalette.thirdColor,
-                    onClick: () => pageController.jumpToPage(1),
-                  ),
-                  const SizedBox(width: 5),
-                  CustomTextButton(
-                    text: "Contact",
-                    mainColor: Colors.transparent,
-                    textColor: currentIndex == 2
-                        ? provider.colorPalette.mainColor
-                        : provider.colorPalette.thirdColor,
-                    onClick: () => pageController.jumpToPage(2),
-                  ),
-                  const SizedBox(width: 5),
+                  if (mediaData.size.width >= 720)
+                    for (int i = 0; i < aboutMenu.length; i++) ...[
+                      CustomTextButton(
+                        text: aboutMenu[i],
+                        mainColor: Colors.transparent,
+                        textColor: currentIndex == i
+                            ? provider.colorPalette.mainColor
+                            : provider.colorPalette.thirdColor,
+                        onClick: () => pageController.jumpToPage(i),
+                      ),
+                      const SizedBox(width: 5),
+                    ],
+                  if (mediaData.size.width < 720)
+                    PopupMenuButton<String>(
+                        color: provider.colorPalette.secondColor,
+                        elevation: 20,
+                        enabled: true,
+                        icon: Icon(Icons.more_vert,
+                            color: provider.colorPalette.thirdColor),
+                        onSelected: (value) {
+                          pageController.jumpToPage(aboutMenu.indexOf(value));
+                        },
+                        itemBuilder: (context) {
+                          return aboutMenu.map((choice) {
+                            return PopupMenuItem(
+                              value: choice,
+                              child: Text(
+                                choice,
+                                style: Styles.tileTitle.copyWith(
+                                    color: provider.colorPalette.thirdColor),
+                              ),
+                            );
+                          }).toList();
+                        }),
+
+                  //  Material(
+                  //     borderRadius: BorderRadius.circular(50),
+                  //     color: Colors.transparent,
+                  //     child: IconButton(
+                  //       splashColor: Colors.white,
+                  //       // hoverColor: provider.colorPalette.mainColor,
+                  //       tooltip: "ESC",
+                  //       highlightColor: provider.colorPalette.mainColor,
+                  //       splashRadius: 20,
+                  //       icon: Icon(
+                  //         Icons.clear,
+                  //         color: provider.colorPalette.thirdColor,
+                  //       ),
+                  //       onPressed: () => Navigator.pop(context),
+                  //     ),
+                  //   ),
                   Material(
                     borderRadius: BorderRadius.circular(50),
                     color: Colors.transparent,

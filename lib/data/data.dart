@@ -62,3 +62,5 @@ String aboutMe =
 String whatIdo = "Web & Mobile";
 
 String whatItIS = "Development";
+
+List<String> aboutMenu = ["Profile", "Career", "Contact"];
