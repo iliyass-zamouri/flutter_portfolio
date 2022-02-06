@@ -34,11 +34,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    Brightness preferedBrightness =
-        SchedulerBinding.instance!.window.platformBrightness;
-    if (preferedBrightness == Brightness.light) {
-      context.read<StateProvider>().toggleColor();
-    }
+    final ValueNotifier<Brightness> preferedBrightnessListener =
+        ValueNotifier<Brightness>(
+            SchedulerBinding.instance!.window.platformBrightness);
+
+    preferedBrightnessListener.addListener(() {
+      Brightness preferedBrightness =
+          SchedulerBinding.instance!.window.platformBrightness;
+      if (preferedBrightness == Brightness.light) {
+        context.read<StateProvider>().toggleColor();
+      }
+    });
   }
 
   @override
