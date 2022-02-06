@@ -34,7 +34,7 @@ List<Skill> skills = const [
   Skill(name: "Sql Server", category: "Database"),
   Skill(name: "FireBase", category: "Database"),
   Skill(name: "SupaBase (Postgres)", category: "Database"),
-  Skill(name: "Flutter (Android/IOS)", category: "Mobile"),
+  Skill(name: "Flutter (Android/IOS)", category: "Mobile Development"),
   Skill(name: "UML", category: "Project Modeling"),
   Skill(name: "Merise", category: "Project Modeling"),
   Skill(name: "Trello", category: "WorkFlow"),
