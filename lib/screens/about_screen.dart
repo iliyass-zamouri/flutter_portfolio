@@ -1,13 +1,8 @@
-import 'dart:html' as html;
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/data/data.dart';
-import 'package:flutter_portfolio/screens/home_screen.dart';
+import 'package:flutter_portfolio/screens/profile_screen.dart';
 import 'package:flutter_portfolio/state_provider.dart';
 import 'package:flutter_portfolio/styles/text_styles.dart';
-import 'package:flutter_portfolio/widgets/box_container.dart';
-import 'package:flutter_portfolio/widgets/skills_widget.dart';
 import 'package:flutter_portfolio/widgets/text_button.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 class AboutScreen extends StatefulWidget {
@@ -108,156 +103,47 @@ class _AboutScreenState extends State<AboutScreen> {
           ),
         ),
         Styles.divider(provider.colorPalette.thirdColor),
-
         Flexible(
             child: PageView(
           /// [PageView.scrollDirection] defaults to [Axis.horizontal].
           /// Use [Axis.vertical] to scroll vertically.
           controller: pageController,
           children: <Widget>[
-            Container(
-              height: mediaData.size.height - 31,
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 5),
-                      width: mediaData.size.width <= 720
-                          ? mediaData.size.width
-                          : mediaData.size.width * 0.5,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              border: Border.all(color: Colors.white, width: 2),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(50),
-                              child: Image.network(
-                                user.imageURL,
-                                height: 100,
-                                width: 100,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "${user.fname} ${user.lname}".toUpperCase(),
-                                style: Styles.title.copyWith(
-                                    color: provider.colorPalette.thirdColor,
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.w600,
-                                    letterSpacing: 1.1),
-                              ),
-                              Text(
-                                user.profession,
-                                style: Styles.timeTextStyle.copyWith(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: provider.colorPalette.mainColor,
-                                    letterSpacing: 1.1),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(user.countryImojie),
-                                  const SizedBox(width: 5),
-                                  Text(user.countryName,
-                                      style: Styles.bottomNavText.copyWith(
-                                          color:
-                                              provider.colorPalette.thirdColor,
-                                          fontSize: 14))
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    BoxContainer(title: "About", content: user.about),
-                    Flexible(
-                      child: SkillsWidget(
-                          title: "Skills",
-                          categories: user.skills
-                              .map((e) => e.category)
-                              .toSet()
-                              .toList(),
-                          skills: user.skills),
-                    )
-                  ],
-                ),
+            const ProfileScreen(),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Styles.spinkit(provider.colorPalette.thirdColor),
+                  const SizedBox(width: 5),
+                  Text(
+                    "My career information will be available soon",
+                    style: Styles.miniPlayerTile
+                        .copyWith(color: provider.colorPalette.thirdColor),
+                  ),
+                ],
               ),
             ),
-            Flexible(
-              flex: 1,
-              child: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Styles.spinkit,
-                    const SizedBox(width: 5),
-                    Text(
-                      "My career information will be available soon",
-                      style:
-                          Styles.miniPlayerTile.copyWith(color: Colors.black),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Flexible(
-              flex: 1,
-              child: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Styles.spinkit,
-                    const SizedBox(width: 5),
-                    Text(
-                      "My contact information will be available soon",
-                      style:
-                          Styles.miniPlayerTile.copyWith(color: Colors.black),
-                    ),
-                  ],
-                ),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Styles.spinkit(provider.colorPalette.thirdColor),
+                  const SizedBox(width: 5),
+                  Text(
+                    "My contact information will be available soon",
+                    style: Styles.miniPlayerTile
+                        .copyWith(color: provider.colorPalette.thirdColor),
+                  ),
+                ],
               ),
             )
           ],
         )),
-        // Flexible(
-        //   flex: 1,
-        //   child: Center(
-        //     child: Row(
-        //       mainAxisAlignment: MainAxisAlignment.center,
-        //       crossAxisAlignment: CrossAxisAlignment.center,
-        //       mainAxisSize: MainAxisSize.max,
-        //       children: [
-        //         Styles.spinkit,
-        //         const SizedBox(width: 5),
-        //         Text(
-        //           "My information will be available soon",
-        //           style: Styles.miniPlayerTile.copyWith(color: provider.colorPalette.secondColor),
-        //         ),
-        //       ],
-        //     ),
-        //   ),
-        // )
       ],
     );
   }

@@ -191,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -256,7 +256,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               children: [
                 Material(
-                  color: provider.colorPalette.secondColor,
+                  color: provider.colorPalette.backgroundColor,
                   borderRadius: BorderRadius.circular(50),
                   child: InkWell(
                     onTap: () =>
@@ -275,23 +275,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 const SizedBox(width: 5),
-                CustomTextButton(
-                  text: "About Me",
-                  onClick: () => showModalBottomSheet(
-                      context: context,
-                      isScrollControlled: true,
-                      backgroundColor: Colors.transparent,
-                      builder: (context) => Container(
-                            color: provider.colorPalette.backgroundColor,
-                            margin: EdgeInsets.symmetric(
-                                horizontal:
-                                    mediaData.size.width >= 720 ? 200 : 0),
-                            child: SizedBox(
-                              height: mediaData.size.height,
-                              child: const AboutScreen(),
-                            ),
-                          )),
-                )
+                if (mediaData.size.width >= 720)
+                  CustomTextButton(
+                    text: "About Me",
+                    onClick: () => showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        backgroundColor: Colors.transparent,
+                        builder: (context) => Container(
+                              color: provider.colorPalette.backgroundColor,
+                              margin: EdgeInsets.symmetric(
+                                  horizontal:
+                                      mediaData.size.width >= 720 ? 200 : 0),
+                              child: SizedBox(
+                                height: mediaData.size.height,
+                                child: const AboutScreen(),
+                              ),
+                            )),
+                  )
               ],
             )
           ],

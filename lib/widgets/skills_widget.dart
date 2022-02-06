@@ -2,7 +2,6 @@
 import 'package:chips_choice/chips_choice.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_improved_scrolling/flutter_improved_scrolling.dart';
 import 'package:flutter_portfolio/models/skill.dart';
 import 'package:flutter_portfolio/state_provider.dart';
 import 'package:flutter_portfolio/styles/text_styles.dart';
@@ -107,25 +106,23 @@ class _SkillsWidgetState extends State<SkillsWidget> {
                     .toList()),
           ),
           Flexible(
-            child: SingleChildScrollView(
-              child: ListView.separated(
-                  shrinkWrap: true,
-                  // physics: const NeverScrollableScrollPhysics(),
-                  itemCount: filtredList.length,
-                  separatorBuilder: (context, index) {
-                    return Styles.divider(provider.colorPalette.thirdColor);
-                  },
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                      title: Text(
-                        filtredList[index].name,
-                        style: Styles.textSubTitle.copyWith(
-                            color: provider.colorPalette.thirdColor,
-                            fontSize: 18),
-                      ),
-                    );
-                  }),
-            ),
+            child: ListView.separated(
+                shrinkWrap: true,
+                // physics: const NeverScrollableScrollPhysics(),
+                itemCount: filtredList.length,
+                separatorBuilder: (context, index) {
+                  return Styles.divider(provider.colorPalette.thirdColor);
+                },
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(
+                      filtredList[index].name,
+                      style: Styles.textSubTitle.copyWith(
+                          color: provider.colorPalette.thirdColor,
+                          fontSize: 18),
+                    ),
+                  );
+                }),
           )
         ],
       ),

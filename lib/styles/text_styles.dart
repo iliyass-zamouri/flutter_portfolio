@@ -45,10 +45,10 @@ class Styles {
 
   static const mainColor = Color(0xFF0668D7);
 
-  static Widget spinkit = const SpinKitDoubleBounce(
-    color: Colors.black,
-    size: 30.0,
-  );
+  static Widget spinkit(color) => SpinKitDoubleBounce(
+        color: color,
+        size: 30.0,
+      );
 
   static Widget divider(color) => Divider(
         thickness: 1,
