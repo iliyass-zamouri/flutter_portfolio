@@ -49,4 +49,10 @@ class Styles {
     color: Colors.black,
     size: 30.0,
   );
+
+  static Widget divider(color) => Divider(
+        thickness: 1,
+        color: color.withOpacity(0.2),
+        height: 1,
+      );
 }
