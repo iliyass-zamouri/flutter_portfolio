@@ -51,13 +51,17 @@ class ProjectCard extends StatelessWidget {
                         width: 35,
                         height: 35,
                         child: Icon(LineAwesomeIcons.school)),
-                    Text(
-                      "Associated with ${project.associated.name}",
-                      style: Styles.tileTitle.copyWith(
-                          color: provider.colorPalette.thirdColor,
-                          height: 1.3,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14),
+                    Expanded(
+                      child: SizedBox(
+                        child: Text(
+                          "Associated with ${project.associated.name}",
+                          style: Styles.tileTitle.copyWith(
+                              color: provider.colorPalette.thirdColor,
+                              height: 1.3,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14),
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -79,12 +83,17 @@ class ProjectCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Text("Associated with ${project.associated.name}",
-                        style: Styles.tileTitle.copyWith(
-                            color: provider.colorPalette.thirdColor,
-                            height: 1.3,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14))
+                    Expanded(
+                      child: SizedBox(
+                        child: Text(
+                            "Associated with ${project.associated.name}",
+                            style: Styles.tileTitle.copyWith(
+                                color: provider.colorPalette.thirdColor,
+                                height: 1.3,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14)),
+                      ),
+                    )
                   ],
                 ),
               const SizedBox(height: 2),

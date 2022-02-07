@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/state_provider.dart';
 import 'package:flutter_portfolio/styles/custom_scroll.dart';
 import 'package:flutter_portfolio/styles/styles.dart';
-import 'package:flutter_portfolio/extentions.dart';
 import 'package:provider/provider.dart';
 
 class ExtendedBoxContainer extends StatelessWidget {
