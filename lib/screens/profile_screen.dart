@@ -26,7 +26,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Container(
       height: mediaData.size.height - 31,
       padding: const EdgeInsets.symmetric(vertical: 10),
-      child: SingleChildScrollView(
+      child:ScrollConfiguration(
+        behaviour: CustomScroll(),
+        child: SingleChildScrollView(
         // padding: const EdgeInsets.only(bottom: 100),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -107,7 +109,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 skills: user.skills)
           ],
         ),
-      ),
+      )),
     );
   }
 }
