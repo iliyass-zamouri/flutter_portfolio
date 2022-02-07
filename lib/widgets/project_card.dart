@@ -42,9 +42,10 @@ class ProjectCard extends StatelessWidget {
             ),
             const SizedBox(height: 4),
 
-            if (project.associated != null) ...[
+            if (project.associatedEnterprise != null &&
+                project.associatedSchool != null) ...[
               const SizedBox(height: 2),
-              if (project.isEducationRelated)
+              if (project.associatedSchool != null)
                 Row(
                   children: [
                     const SizedBox(
@@ -54,7 +55,7 @@ class ProjectCard extends StatelessWidget {
                     Expanded(
                       child: SizedBox(
                         child: Text(
-                          "Associated with ${project.associated.name}",
+                          "Associated with ${project.associatedSchool!.name}",
                           style: Styles.tileTitle.copyWith(
                               color: provider.colorPalette.thirdColor,
                               height: 1.3,
@@ -65,7 +66,7 @@ class ProjectCard extends StatelessWidget {
                     )
                   ],
                 ),
-              if (!project.isEducationRelated)
+              if (project.associatedEnterprise != null)
                 Row(
                   children: [
                     Container(
@@ -77,7 +78,7 @@ class ProjectCard extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.network(
-                          project.associated.imageURL,
+                          project.associatedEnterprise!.imageURL,
                           width: 35,
                           height: 35,
                         ),
@@ -86,7 +87,7 @@ class ProjectCard extends StatelessWidget {
                     Expanded(
                       child: SizedBox(
                         child: Text(
-                            "Associated with ${project.associated.name}",
+                            "Associated with ${project.associatedEnterprise!.name}",
                             style: Styles.tileTitle.copyWith(
                                 color: provider.colorPalette.thirdColor,
                                 height: 1.3,

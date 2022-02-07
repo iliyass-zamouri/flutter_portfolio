@@ -1,9 +1,12 @@
+import 'package:flutter_portfolio/models/enterprise.dart';
+import 'package:flutter_portfolio/models/school.dart';
+
 class Project {
   final String name;
   final String startDate;
   final String endDate;
-  final dynamic associated;
-  final bool isEducationRelated;
+  final Enterprise? associatedEnterprise;
+  final School? associatedSchool;
   final String url;
   final String description;
 
@@ -11,8 +14,8 @@ class Project {
       {required this.name,
       required this.startDate,
       this.endDate = "Present",
-      this.isEducationRelated = false,
-      this.associated,
+      this.associatedEnterprise,
+      this.associatedSchool,
       required this.url,
       required this.description});
 }

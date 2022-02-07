@@ -216,7 +216,7 @@ List<Project> projects = [
       startDate: "Jun 2021",
       endDate: "Jun 2021",
       url: "https://github.com/GestionCollocation",
-      associated: workedAt[0],
+      associatedEnterprise: workedAt[0],
       description:
           "Web and Mobile application for helping people collaborate in renting and finding properties."),
   Project(
@@ -224,15 +224,14 @@ List<Project> projects = [
       startDate: "Oct 2020",
       endDate: "Jun 2021",
       url: "https://github.com/fuel-delivery",
-      associated: education[1],
-      isEducationRelated: true,
+      associatedSchool: education[1],
       description:
           "Mobile App with 3 user types.\n\nClient: Can order, follow up with the order, manage his orders and favorites gaz-stations.\n\nWorker (delivery): Accept an order and deliver it, confirm the delivery (QrCode Scan) and change his status.\n\n Manager: Manage workers, orders, assign new workers.\n\nThis App been created with Flutter (mobile development framework) and Firebase (Backend server with real-time Database)."),
   Project(
       name: "Services de conciergerie",
       startDate: "Aug 2021",
       url: "https://play.google.com/store/apps/details?id=com.rheo.app",
-      associated: workedAt[1],
+      associatedEnterprise: workedAt[1],
       description: "Reservation management application Real estate cleaning."),
   Project(
       name: "Portfolio WebApp",
