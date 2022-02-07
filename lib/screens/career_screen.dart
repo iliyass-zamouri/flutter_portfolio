@@ -34,7 +34,7 @@ class _CareerScreenState extends State<CareerScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           children: [
-            ResponsiveList(rowNum: 0, children: [
+            Flex(direction: Axis.vertical, children: [
               ExtendedBoxContainer(
                   title: "Education",
                   content: user.education!.reversed
