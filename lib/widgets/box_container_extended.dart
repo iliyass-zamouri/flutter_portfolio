@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/state_provider.dart';
+import 'package:flutter_portfolio/styles/custom_scroll.dart';
 import 'package:flutter_portfolio/styles/styles.dart';
+import 'package:flutter_portfolio/extentions.dart';
 import 'package:provider/provider.dart';
 
 class ExtendedBoxContainer extends StatelessWidget {
@@ -17,7 +19,7 @@ class ExtendedBoxContainer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       margin: const EdgeInsets.all(10),
-      width: mediaData.size.width <= 720
+      width: mediaData.size.width <= 768
           ? mediaData.size.width
           : mediaData.size.width * 0.5,
       decoration: BoxDecoration(
@@ -35,13 +37,22 @@ class ExtendedBoxContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(title,
-              overflow: TextOverflow.ellipsis,
               style: Styles.tileTitle.copyWith(
                   color: provider.colorPalette.thirdColor,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600)),
+                  fontSize: 19,
+                  fontWeight: FontWeight.w500)),
           const SizedBox(height: 5),
-          ...content
+          ScrollConfiguration(
+            behavior: CustomScroll(),
+            child: ListView.builder(
+                itemCount: content.length,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                padding: EdgeInsets.zero,
+                itemBuilder: (context, index) {
+                  return content[index];
+                }),
+          )
         ],
       ),
     );

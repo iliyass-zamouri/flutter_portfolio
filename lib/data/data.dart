@@ -1,4 +1,5 @@
 import 'package:flutter_portfolio/models/enterprise.dart';
+import 'package:flutter_portfolio/models/project.dart';
 import 'package:flutter_portfolio/models/school.dart';
 import 'package:flutter_portfolio/models/skill.dart';
 import 'package:flutter_portfolio/models/socialmedia.dart';
@@ -13,6 +14,7 @@ User user = User(
     about: aboutMe,
     socialmedia: sites,
     experience: workedAt,
+    projects: projects,
     education: education,
     countryImojie: '🇲🇦',
     countryName: "Morocco",
@@ -167,7 +169,7 @@ List<String> aboutMenu = ["Profile", "Career", "Contact"];
 
 List<Enterprise> workedAt = [
   Enterprise(
-      name: "IM-Creative",
+      name: "IM-CREATIVE",
       imageURL:
           "https://media-exp1.licdn.com/dms/image/C4D0BAQEaSrVdIHGXgw/company-logo_200_200/0/1618918702222?e=1652313600&v=beta&t=vlPjeq-Co8xZ8dm1JTaqvnp4ZF1JlvhPCkrN2ncmsvM",
       post: "Web Application Developer",
@@ -177,10 +179,18 @@ List<Enterprise> workedAt = [
       endTime: "Jun 2021",
       duration: "1 mo"),
   Enterprise(
+      name: "Rhéo Services",
+      imageURL:
+          "https://media-exp1.licdn.com/dms/image/C4D03AQH45z4JaVfYFQ/profile-displayphoto-shrink_800_800/0/1617474633389?e=1649894400&v=beta&t=VfEto45nXgnJglWVZwELv-K3i-bkW-OvbSLpx2Yfg9Y",
+      post: "Mobile Software Developer",
+      contract: ContractType.freelance,
+      startTime: "Oct 2021",
+      duration: "8 mo"),
+  Enterprise(
       name: "Nativys",
       imageURL:
           "https://media-exp1.licdn.com/dms/image/C560BAQHObfYQyzaTrg/company-logo_200_200/0/1626983535628?e=1652313600&v=beta&t=ovGp6oNC16-MDLeOGPeHlWxH2REEvfWzsygBHNlgQ7c",
-      post: "Software Developer - Mobile Development",
+      post: "Mobile Software Developer",
       description:
           "Developing, Managing & Maintaining two mobile apps.\n\nNativys: App for clients to help them make a reservation in a beauty institution.\n\nNativys Pro: Mobile CRM for professionals in the beauty centers industry to help them manage their clients, reservations and revenue.",
       startTime: "Oct 2021",
@@ -199,3 +209,49 @@ List<School> education = [
       startTime: "2019",
       graduation: "2021")
 ];
+
+List<Project> projects = [
+  Project(
+      name: "Location (Rent Collaboration)",
+      startDate: "Jun 2021",
+      endDate: "Jun 2021",
+      url: "https://github.com/GestionCollocation",
+      associated: workedAt[0],
+      description:
+          "Web and Mobile application for helping people collaborate in renting and finding properties."),
+  Project(
+      name: "Fuel Delivery",
+      startDate: "Oct 2020",
+      endDate: "Jun 2021",
+      url: "https://github.com/fuel-delivery",
+      associated: education[1],
+      isEducationRelated: true,
+      description:
+          "Mobile App with 3 user types.\n\nClient: Can order, follow up with the order, manage his orders and favorites gaz-stations.\n\nWorker (delivery): Accept an order and deliver it, confirm the delivery (QrCode Scan) and change his status.\n\n Manager: Manage workers, orders, assign new workers.\n\nThis App been created with Flutter (mobile development framework) and Firebase (Backend server with real-time Database)."),
+  Project(
+      name: "Services de conciergerie",
+      startDate: "Aug 2021",
+      url: "https://play.google.com/store/apps/details?id=com.rheo.app",
+      associated: workedAt[1],
+      description: "Reservation management application Real estate cleaning."),
+  Project(
+      name: "Portfolio WebApp",
+      startDate: "Feb 2022",
+      url: "https://www.iliyass-zamouri.ga",
+      description:
+          "Flutter Web targeted App, With reqponsive design and beautiful UI, And good UX.\n\nYou are currently viewing it 🙂."),
+  Project(
+      name: "Flutter Agenda (Dart Plugin)",
+      startDate: "Feb 2022",
+      url: "https://pub.dev/packages/flutter_agenda",
+      description:
+          "Agenda with diagonal ScrollBehavior.\n\nX Axis: To visualize resources and their appointments or days and events.\nY Axis: hourly timeline.\n\nWorks in all flutter supported platforms."),
+  Project(
+      name: "Collage Image (Dart Plugin)",
+      startDate: "Feb 2022",
+      url: "https://pub.dev/packages/image_collage",
+      description:
+          "Collaging multiple images into a single image.\nAuto layout and the ability to set a click function for each of them (images).\nSupport images from the web and app assets."),
+];
+
+var xx = "Application de gestion des réservations nettoyage des immobiliers.";

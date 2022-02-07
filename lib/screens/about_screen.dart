@@ -62,7 +62,7 @@ class _AboutScreenState extends State<AboutScreen> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      if (mediaData.size.width >= 720)
+                      if (mediaData.size.width >= 768)
                         for (int i = 0; i < aboutMenu.length; i++) ...[
                           CustomTextButton(
                             text: aboutMenu[i],
@@ -74,7 +74,7 @@ class _AboutScreenState extends State<AboutScreen> {
                           ),
                           const SizedBox(width: 5),
                         ],
-                      if (mediaData.size.width < 720)
+                      if (mediaData.size.width < 768)
                         PopupMenuButton<String>(
                             color: provider.colorPalette.secondColor,
                             elevation: 2,

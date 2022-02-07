@@ -10,7 +10,6 @@ import 'package:flutter_portfolio/widgets/button.dart';
 import 'package:flutter_portfolio/widgets/text_button.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
@@ -116,16 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       context: context,
                       isScrollControlled: true,
                       backgroundColor: Colors.transparent,
-                      builder: (context) => Container(
-                            color: provider.colorPalette.backgroundColor,
-                            margin: EdgeInsets.symmetric(
-                                horizontal:
-                                    mediaData.size.width >= 720 ? 200 : 0),
-                            child: SizedBox(
-                              height: mediaData.size.height,
-                              child: const AboutScreen(),
-                            ),
-                          )),
+                      builder: (context) => const AboutScreen()),
                 ),
               ],
             ),
@@ -283,7 +273,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 const SizedBox(width: 5),
-                if (mediaData.size.width >= 720)
+                if (mediaData.size.width >= 768)
                   CustomTextButton(
                     text: "About Me",
                     onClick: () => showModalBottomSheet(

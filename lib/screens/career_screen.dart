@@ -5,6 +5,7 @@ import 'package:flutter_portfolio/styles/styles.dart';
 import 'package:flutter_portfolio/widgets/box_container_extended.dart';
 import 'package:flutter_portfolio/widgets/education_card.dart';
 import 'package:flutter_portfolio/widgets/experience_card.dart';
+import 'package:flutter_portfolio/widgets/project_card.dart';
 import 'package:flutter_portfolio/widgets/responsive_list.dart';
 import 'package:flutter_portfolio/extentions.dart';
 import 'package:provider/provider.dart';
@@ -48,7 +49,13 @@ class _CareerScreenState extends State<CareerScreen> {
                       .addSpaceDivider(
                           10, Styles.divider(provider.colorPalette.thirdColor))
                       .toList()),
-              const ExtendedBoxContainer(title: "Projects", content: []),
+              ExtendedBoxContainer(
+                  title: "Projects",
+                  content: user.projects.reversed
+                      .map((e) => ProjectCard(project: e))
+                      .addSpaceDivider(
+                          10, Styles.divider(provider.colorPalette.thirdColor))
+                      .toList()),
             ]),
           ],
         ),

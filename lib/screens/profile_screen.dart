@@ -34,7 +34,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           children: [
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 5),
-              width: mediaData.size.width <= 720
+              width: mediaData.size.width <= 768
                   ? mediaData.size.width
                   : mediaData.size.width * 0.5,
               child: Row(

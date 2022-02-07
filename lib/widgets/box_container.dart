@@ -16,7 +16,7 @@ class BoxContainer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       margin: const EdgeInsets.all(10),
-      width: mediaData.size.width <= 720
+      width: mediaData.size.width <= 768
           ? mediaData.size.width
           : mediaData.size.width * 0.5,
       decoration: BoxDecoration(

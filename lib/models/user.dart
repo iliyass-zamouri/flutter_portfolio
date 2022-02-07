@@ -1,4 +1,5 @@
 import 'package:flutter_portfolio/models/enterprise.dart';
+import 'package:flutter_portfolio/models/project.dart';
 import 'package:flutter_portfolio/models/school.dart';
 import 'package:flutter_portfolio/models/skill.dart';
 import 'package:flutter_portfolio/models/socialmedia.dart';
@@ -11,6 +12,7 @@ class User {
   final List<School>? education;
   final String about;
   final List<Skill> skills;
+  final List<Project> projects;
   final String countryName;
   final String countryImojie;
   final String imageURL;
@@ -22,7 +24,8 @@ class User {
       this.experience,
       this.education,
       required this.about,
-      required this.skills,
+      this.projects = const [],
+      this.skills = const [],
       this.socialmedia = const [],
       required this.countryName,
       required this.countryImojie,

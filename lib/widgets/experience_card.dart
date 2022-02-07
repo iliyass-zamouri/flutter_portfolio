@@ -17,7 +17,15 @@ class ExperienceCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image.network(enterprise.imageURL, width: 60, height: 60),
+        Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                    color: provider.colorPalette.thirdColor.withOpacity(0.1))),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child:
+                    Image.network(enterprise.imageURL, width: 60, height: 60))),
         Flexible(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
@@ -50,27 +58,28 @@ class ExperienceCard extends StatelessWidget {
                       fontSize: 12),
                 ),
                 const SizedBox(height: 8),
-
-                ReadMoreText(
-                  "${enterprise.description}\n",
-                  trimLines: 2,
-                  trimMode: TrimMode.Line,
-                  trimCollapsedText: 'Show more',
-                  trimExpandedText: 'Show less',
-                  style: Styles.tileTitle.copyWith(
-                      color: provider.colorPalette.thirdColor,
-                      height: 1.3,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14),
-                  lessStyle: Styles.tileTitle.copyWith(
-                      color: provider.colorPalette.thirdColor.withOpacity(0.6),
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12),
-                  moreStyle: Styles.tileTitle.copyWith(
-                      color: provider.colorPalette.mainColor,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12),
-                ),
+                if (enterprise.description != "")
+                  ReadMoreText(
+                    "${enterprise.description}\n",
+                    trimLines: 2,
+                    trimMode: TrimMode.Line,
+                    trimCollapsedText: 'Show more',
+                    trimExpandedText: 'Show less',
+                    style: Styles.tileTitle.copyWith(
+                        color: provider.colorPalette.thirdColor,
+                        height: 1.3,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14),
+                    lessStyle: Styles.tileTitle.copyWith(
+                        color:
+                            provider.colorPalette.thirdColor.withOpacity(0.6),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12),
+                    moreStyle: Styles.tileTitle.copyWith(
+                        color: provider.colorPalette.mainColor,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12),
+                  ),
                 // Text(
                 //   enterprise.description,
                 //   style: Styles.tileTitle.copyWith(
