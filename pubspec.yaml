@@ -18,6 +18,7 @@ dependencies:
   provider:
   url_strategy: ^0.2.0
   flutter_spinkit: ^5.1.0
+  readmore: ^2.1.0
   font_awesome_flutter: ^9.2.0
   cupertino_icons: ^1.0.2
   line_awesome_flutter: ^2.0.0

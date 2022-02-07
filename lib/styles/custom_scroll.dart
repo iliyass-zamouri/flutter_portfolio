@@ -11,3 +11,11 @@ class CustomScrollBehavior extends MaterialScrollBehavior {
         // etc.
       };
 }
+
+class CustomScroll extends ScrollBehavior {
+  @override
+  Widget buildViewportChrome(
+      BuildContext context, Widget child, AxisDirection axisDirection) {
+    return child;
+  }
+}

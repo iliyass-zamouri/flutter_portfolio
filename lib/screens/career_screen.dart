@@ -33,7 +33,7 @@ class _CareerScreenState extends State<CareerScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           children: [
-            ResponsiveList(children: [
+            ResponsiveList(rowNum: 0, children: [
               ExtendedBoxContainer(
                   title: "Education",
                   content: user.education!.reversed
@@ -48,6 +48,7 @@ class _CareerScreenState extends State<CareerScreen> {
                       .addSpaceDivider(
                           10, Styles.divider(provider.colorPalette.thirdColor))
                       .toList()),
+              const ExtendedBoxContainer(title: "Projects", content: []),
             ]),
           ],
         ),

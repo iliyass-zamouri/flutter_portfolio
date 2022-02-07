@@ -71,6 +71,19 @@ List<Skill> skills = const [
       name: "JavaScript",
       logo: LineAwesomeIcons.javascript__js_,
       category: "Programming Languages"),
+  Skill(name: "Algorithm", logo: LineAwesomeIcons.dev, category: "CS"),
+  Skill(
+      name: "Computer Architecture",
+      logo: LineAwesomeIcons.laptop,
+      category: "CS"),
+  Skill(
+      name: "Photoshop",
+      logo: LineAwesomeIcons.adobe,
+      category: "Manipulation of Multimedia"),
+  Skill(
+      name: "Adobe Premiere",
+      logo: LineAwesomeIcons.adobe,
+      category: "Manipulation of Multimedia"),
   Skill(
       name: "Java (OOP)",
       logo: LineAwesomeIcons.java,
@@ -105,7 +118,14 @@ List<Skill> skills = const [
       name: "Merise",
       logo: LineAwesomeIcons.creative_commons,
       category: "Project Modeling"),
-  Skill(name: "Trello", logo: LineAwesomeIcons.trello, category: "WorkFlow"),
+  Skill(
+      name: "Adobe XD",
+      logo: LineAwesomeIcons.adobe,
+      category: "Project Modeling"),
+  Skill(
+      name: "Trello",
+      logo: LineAwesomeIcons.trello,
+      category: "Project Management"),
   Skill(
       name: "GitHub",
       logo: LineAwesomeIcons.github,
