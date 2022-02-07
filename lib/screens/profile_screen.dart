@@ -26,7 +26,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Container(
       height: mediaData.size.height - 31,
       padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Center(
+      child: SingleChildScrollView(
+        // padding: const EdgeInsets.only(bottom: 100),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -100,13 +101,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
             BoxContainer(title: "About", content: user.about),
-            Flexible(
-              child: SkillsWidget(
-                  title: "Skills",
-                  categories:
-                      user.skills.map((e) => e.category).toSet().toList(),
-                  skills: user.skills),
-            )
+            SkillsWidget(
+                title: "Skills",
+                categories: user.skills.map((e) => e.category).toSet().toList(),
+                skills: user.skills)
           ],
         ),
       ),

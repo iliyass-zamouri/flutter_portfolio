@@ -27,6 +27,7 @@ enum ContractType {
   fulltime,
   parttime,
   independant,
+  contributor,
   contract,
 }
 
@@ -45,7 +46,8 @@ extension ContractExtention on ContractType {
         return "Part-time";
       case ContractType.independant:
         return "Self-employed";
-
+      case ContractType.contributor:
+        return "Contributor";
       default:
         return "";
     }

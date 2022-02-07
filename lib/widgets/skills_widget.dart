@@ -59,6 +59,7 @@ class _SkillsWidgetState extends State<SkillsWidget> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
         children: [
           Text(widget.title,
               overflow: TextOverflow.ellipsis,
@@ -109,50 +110,44 @@ class _SkillsWidgetState extends State<SkillsWidget> {
                       .toList()),
             ),
           ),
-          Flexible(
-            child: ScrollConfiguration(
-              behavior: CustomScroll(),
-              child: ListView.separated(
-                  shrinkWrap: true,
-                  // physics: const NeverScrollableScrollPhysics(),
-                  itemCount: filtredList.length,
-                  separatorBuilder: (context, index) {
-                    return Styles.divider(provider.colorPalette.thirdColor);
-                  },
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                      leading: Container(
-                        height: 34,
-                        width: 34,
-                        decoration: provider.isDark
-                            ? BoxDecoration(
-                                color: provider.colorPalette.thirdColor,
-                                borderRadius: BorderRadius.circular(50))
-                            : BoxDecoration(
-                                border: Border.all(
-                                    color: provider.colorPalette.mainColor),
-                                color: provider.colorPalette.secondColor,
-                                borderRadius: BorderRadius.circular(50)),
-                        child: Center(
-                          child: Icon(
-                            filtredList[index].logo,
-                            color: provider.isDark
-                                ? provider.colorPalette.secondColor
-                                : provider.colorPalette.mainColor,
-                            size: 26,
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        filtredList[index].name,
-                        style: Styles.textSubTitle.copyWith(
+          ListView.separated(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: filtredList.length,
+              separatorBuilder: (context, index) {
+                return Styles.divider(provider.colorPalette.thirdColor);
+              },
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: Container(
+                    height: 34,
+                    width: 34,
+                    decoration: provider.isDark
+                        ? BoxDecoration(
                             color: provider.colorPalette.thirdColor,
-                            fontSize: 18),
+                            borderRadius: BorderRadius.circular(50))
+                        : BoxDecoration(
+                            border: Border.all(
+                                color: provider.colorPalette.mainColor),
+                            color: provider.colorPalette.secondColor,
+                            borderRadius: BorderRadius.circular(50)),
+                    child: Center(
+                      child: Icon(
+                        filtredList[index].logo,
+                        color: provider.isDark
+                            ? provider.colorPalette.secondColor
+                            : provider.colorPalette.mainColor,
+                        size: 26,
                       ),
-                    );
-                  }),
-            ),
-          )
+                    ),
+                  ),
+                  title: Text(
+                    filtredList[index].name,
+                    style: Styles.textSubTitle.copyWith(
+                        color: provider.colorPalette.thirdColor, fontSize: 18),
+                  ),
+                );
+              })
         ],
       ),
     );

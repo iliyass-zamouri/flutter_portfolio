@@ -184,8 +184,8 @@ List<Enterprise> workedAt = [
           "https://media-exp1.licdn.com/dms/image/C4D03AQH45z4JaVfYFQ/profile-displayphoto-shrink_800_800/0/1617474633389?e=1649894400&v=beta&t=VfEto45nXgnJglWVZwELv-K3i-bkW-OvbSLpx2Yfg9Y",
       post: "Mobile Software Developer",
       contract: ContractType.freelance,
-      startTime: "Oct 2021",
-      duration: "8 mo"),
+      startTime: "July 2021",
+      duration: "6 mo"),
   Enterprise(
       name: "Nativys",
       imageURL:
@@ -195,6 +195,16 @@ List<Enterprise> workedAt = [
           "Developing, Managing & Maintaining two mobile apps.\n\nNativys: App for clients to help them make a reservation in a beauty institution.\n\nNativys Pro: Mobile CRM for professionals in the beauty centers industry to help them manage their clients, reservations and revenue.",
       startTime: "Oct 2021",
       duration: "5 mo"),
+  Enterprise(
+      name: "Flutter Community",
+      imageURL:
+          "https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png",
+      contract: ContractType.contributor,
+      post: "Publisher",
+      description:
+          "Developing and publishing packages & dependencies to the official Dart API (pub.dev).",
+      startTime: "Jan 2022",
+      duration: "2 mo"),
 ];
 
 List<School> education = [
@@ -242,6 +252,7 @@ List<Project> projects = [
   Project(
       name: "Flutter Agenda (Dart Plugin)",
       startDate: "Feb 2022",
+      associatedEnterprise: workedAt[3],
       url: "https://pub.dev/packages/flutter_agenda",
       description:
           "Agenda with diagonal ScrollBehavior.\n\nX Axis: To visualize resources and their appointments or days and events.\nY Axis: hourly timeline.\n\nWorks in all flutter supported platforms."),
@@ -249,6 +260,7 @@ List<Project> projects = [
       name: "Collage Image (Dart Plugin)",
       startDate: "Feb 2022",
       url: "https://pub.dev/packages/image_collage",
+      associatedEnterprise: workedAt[3],
       description:
           "Collaging multiple images into a single image.\nAuto layout and the ability to set a click function for each of them (images).\nSupport images from the web and app assets."),
 ];
