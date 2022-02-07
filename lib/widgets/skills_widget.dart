@@ -119,6 +119,28 @@ class _SkillsWidgetState extends State<SkillsWidget> {
                 },
                 itemBuilder: (context, index) {
                   return ListTile(
+                    leading: Container(
+                      height: 34,
+                      width: 34,
+                      decoration: provider.isDark
+                          ? BoxDecoration(
+                              color: provider.colorPalette.thirdColor,
+                              borderRadius: BorderRadius.circular(50))
+                          : BoxDecoration(
+                              border: Border.all(
+                                  color: provider.colorPalette.mainColor),
+                              color: provider.colorPalette.secondColor,
+                              borderRadius: BorderRadius.circular(50)),
+                      child: Center(
+                        child: Icon(
+                          filtredList[index].logo,
+                          color: provider.isDark
+                              ? provider.colorPalette.secondColor
+                              : provider.colorPalette.mainColor,
+                          size: 26,
+                        ),
+                      ),
+                    ),
                     title: Text(
                       filtredList[index].name,
                       style: Styles.textSubTitle.copyWith(

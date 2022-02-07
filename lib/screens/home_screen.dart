@@ -11,6 +11,7 @@ import 'package:flutter_portfolio/widgets/text_button.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 import 'package:provider/provider.dart';
@@ -80,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
               style: Styles.title.copyWith(
                   fontSize: 20,
                   color: provider.colorPalette.thirdColor,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w200,
                   letterSpacing: 1.2),
             ),
           ],
@@ -273,9 +274,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         provider.isDark
-                            ? Icons.wb_sunny_rounded
-                            : FontAwesomeIcons.solidMoon,
+                            ? LineAwesomeIcons.sun
+                            : LineAwesomeIcons.moon_1,
                         color: provider.colorPalette.thirdColor,
+                        size: 26,
                       ),
                     ),
                   ),
@@ -288,16 +290,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         context: context,
                         isScrollControlled: true,
                         backgroundColor: Colors.transparent,
-                        builder: (context) => Container(
-                              color: provider.colorPalette.backgroundColor,
-                              margin: EdgeInsets.symmetric(
-                                  horizontal:
-                                      mediaData.size.width >= 720 ? 200 : 0),
-                              child: SizedBox(
-                                height: mediaData.size.height,
-                                child: const AboutScreen(),
-                              ),
-                            )),
+                        builder: (context) => const AboutScreen()),
                   )
               ],
             )

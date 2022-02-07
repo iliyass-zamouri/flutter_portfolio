@@ -87,7 +87,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           Padding(
                             padding: const EdgeInsets.only(top: 2),
                             child: Text(
-                                "${user.workedAt!.last.name} • ${user.workedAt!.last.contract.getName()}",
+                                "${user.experience!.last.name} · ${user.experience!.last.contract.getName()}",
                                 style: Styles.bottomNavText.copyWith(
                                     color: provider.colorPalette.thirdColor,
                                     fontSize: 14)),

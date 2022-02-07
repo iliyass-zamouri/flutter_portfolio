@@ -1,7 +1,9 @@
 import 'package:flutter_portfolio/models/enterprise.dart';
+import 'package:flutter_portfolio/models/school.dart';
 import 'package:flutter_portfolio/models/skill.dart';
 import 'package:flutter_portfolio/models/socialmedia.dart';
 import 'package:flutter_portfolio/models/user.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 User user = User(
     fname: "Iliyass",
@@ -10,42 +12,118 @@ User user = User(
     skills: skills,
     about: aboutMe,
     socialmedia: sites,
-    workedAt: workedAt,
+    experience: workedAt,
+    education: education,
     countryImojie: '🇲🇦',
     countryName: "Morocco",
     imageURL: "https://avatars.githubusercontent.com/u/29772839");
 
 List<Skill> skills = const [
-  Skill(name: "Windows", category: "Operating Systems"),
-  Skill(name: "Linux Distributions", category: "Operating Systems"),
-  Skill(name: "MacOS", category: "Operating Systems"),
-  Skill(name: "Laravel", category: "Web Frameworks"),
-  Skill(name: "Flutter Web", category: "Web Frameworks"),
-  Skill(name: "Vue JS", category: "Web Frameworks"),
-  Skill(name: "React JS", category: "Web Frameworks"),
-  Skill(name: "Tailwind CSS", category: "Web Frameworks"),
-  Skill(name: "BootStrap", category: "Web Frameworks"),
-  Skill(name: "Laravel API", category: "Web Frameworks"),
-  Skill(name: "Dart (Flutter)", category: "Programming Languages"),
-  Skill(name: "PHP", category: "Programming Languages"),
-  Skill(name: "JavaScript", category: "Programming Languages"),
-  Skill(name: "Java (OOP)", category: "Programming Languages"),
-  Skill(name: "HTML", category: "Programming Languages"),
-  Skill(name: "CSS", category: "Programming Languages"),
-  Skill(name: "MySql", category: "Database"),
-  Skill(name: "Sql Server", category: "Database"),
-  Skill(name: "FireBase", category: "Database"),
-  Skill(name: "SupaBase (Postgres)", category: "Database"),
-  Skill(name: "Flutter (Android/IOS)", category: "Mobile Development"),
-  Skill(name: "UML", category: "Project Modeling"),
-  Skill(name: "Merise", category: "Project Modeling"),
-  Skill(name: "Trello", category: "WorkFlow"),
-  Skill(name: "GitHub", category: "Codebase Management"),
-  Skill(name: "GitLab", category: "Codebase Management"),
-  Skill(name: "Netlify", category: "Deployment"),
-  Skill(name: "Cpanel", category: "Deployment"),
-  Skill(name: "Google Developer Console (Android)", category: "Deployment"),
-  Skill(name: "App Store Connect (IOS)", category: "Deployment"),
+  Skill(
+      name: "Windows",
+      logo: LineAwesomeIcons.windows,
+      category: "Operating Systems"),
+  Skill(
+      name: "Linux Distributions",
+      logo: LineAwesomeIcons.linux,
+      category: "Operating Systems"),
+  Skill(
+      name: "MacOS",
+      logo: LineAwesomeIcons.apple,
+      category: "Operating Systems"),
+  Skill(
+      name: "Laravel",
+      logo: LineAwesomeIcons.laravel,
+      category: "Web Frameworks"),
+  Skill(
+      name: "Flutter Web",
+      logo: LineAwesomeIcons.chrome,
+      category: "Web Frameworks"),
+  Skill(
+      name: "Vue JS",
+      logo: LineAwesomeIcons.vue_js,
+      category: "Web Frameworks"),
+  Skill(
+      name: "React JS",
+      logo: LineAwesomeIcons.react,
+      category: "Web Frameworks"),
+  Skill(
+      name: "Tailwind CSS",
+      logo: LineAwesomeIcons.css_3_logo,
+      category: "Web Frameworks"),
+  Skill(
+      name: "BootStrap",
+      logo: LineAwesomeIcons.bootstrap,
+      category: "Web Frameworks"),
+  Skill(
+      name: "Laravel API",
+      logo: LineAwesomeIcons.connect_develop,
+      category: "Web Frameworks"),
+  Skill(
+      name: "Dart (Flutter)",
+      logo: LineAwesomeIcons.dev,
+      category: "Programming Languages"),
+  Skill(
+      name: "PHP",
+      logo: LineAwesomeIcons.php,
+      category: "Programming Languages"),
+  Skill(
+      name: "JavaScript",
+      logo: LineAwesomeIcons.javascript__js_,
+      category: "Programming Languages"),
+  Skill(
+      name: "Java (OOP)",
+      logo: LineAwesomeIcons.java,
+      category: "Programming Languages"),
+  Skill(
+      name: "HTML",
+      logo: LineAwesomeIcons.html_5_logo,
+      category: "Programming Languages"),
+  Skill(
+      name: "CSS",
+      logo: LineAwesomeIcons.css_3_logo,
+      category: "Programming Languages"),
+  Skill(name: "MySql", logo: LineAwesomeIcons.database, category: "Database"),
+  Skill(
+      name: "Sql Server",
+      logo: LineAwesomeIcons.database,
+      category: "Database"),
+  Skill(name: "FireBase", logo: LineAwesomeIcons.cloud, category: "Database"),
+  Skill(
+      name: "SupaBase (Postgres)",
+      logo: LineAwesomeIcons.cloud,
+      category: "Database"),
+  Skill(
+      name: "Flutter (Android/IOS)",
+      logo: LineAwesomeIcons.dev,
+      category: "Mobile Development"),
+  Skill(
+      name: "UML",
+      logo: LineAwesomeIcons.creative_commons,
+      category: "Project Modeling"),
+  Skill(
+      name: "Merise",
+      logo: LineAwesomeIcons.creative_commons,
+      category: "Project Modeling"),
+  Skill(name: "Trello", logo: LineAwesomeIcons.trello, category: "WorkFlow"),
+  Skill(
+      name: "GitHub",
+      logo: LineAwesomeIcons.github,
+      category: "Codebase Management"),
+  Skill(
+      name: "GitLab",
+      logo: LineAwesomeIcons.gitlab,
+      category: "Codebase Management"),
+  Skill(name: "Netlify", logo: LineAwesomeIcons.cloud, category: "Deployment"),
+  Skill(name: "Cpanel", logo: LineAwesomeIcons.cpanel, category: "Deployment"),
+  Skill(
+      name: "Google Developer Console (Android)",
+      logo: LineAwesomeIcons.google_play,
+      category: "Deployment"),
+  Skill(
+      name: "App Store Connect (IOS)",
+      logo: LineAwesomeIcons.apple,
+      category: "Deployment"),
 ];
 List<SocialMedia> sites = const [
   SocialMedia(site: WebSite.github, url: "https://github.com/iliyass-zamouri"),
@@ -87,4 +165,17 @@ List<Enterprise> workedAt = [
           "Developing, Managing & Maintaining two mobile apps.\n\nNativys: App for clients to help them make a reservation in a beauty institution.\n\nNativys Pro: Mobile CRM for professionals in the beauty centers industry to help them manage their clients, reservations and revenue.",
       startTime: "Oct 2021",
       duration: "5 mo"),
+];
+
+List<School> education = [
+  School(
+      name: "Imam Ben Hanbal",
+      field: "Physical Science",
+      startTime: "Sep 2015",
+      graduation: "Jun 2018"),
+  School(
+      name: "Brevet de Technicien Supérieur (BTS)",
+      field: "Development of information systems (DSI)",
+      startTime: "2019",
+      graduation: "2021")
 ];

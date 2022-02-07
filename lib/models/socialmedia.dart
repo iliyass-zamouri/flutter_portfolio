@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class SocialMedia {
   final WebSite site;
@@ -28,15 +28,15 @@ extension WebSiteHelper on WebSite {
   IconData getIcon() {
     switch (this) {
       case WebSite.github:
-        return FontAwesomeIcons.github;
+        return LineAwesomeIcons.github;
       case WebSite.linkedin:
-        return FontAwesomeIcons.linkedinIn;
+        return LineAwesomeIcons.linkedin_in;
       case WebSite.twitter:
-        return FontAwesomeIcons.twitter;
+        return LineAwesomeIcons.twitter;
       case WebSite.stackoverflow:
-        return FontAwesomeIcons.stackOverflow;
+        return LineAwesomeIcons.stack_overflow;
       default:
-        return FontAwesomeIcons.unlink;
+        return LineAwesomeIcons.unlink;
     }
   }
 }
