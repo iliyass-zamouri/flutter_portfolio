@@ -1,3 +1,4 @@
+import 'package:animate_icons/animate_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -40,6 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
       context.read<StateProvider>().toggleColor();
     }
   }
+
+  AnimateIconController iconController = AnimateIconController();
 
   @override
   void dispose() {
@@ -252,26 +255,51 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Row(
               children: [
-                Material(
-                  color: provider.colorPalette.backgroundColor,
-                  borderRadius: BorderRadius.circular(50),
-                  child: InkWell(
-                    onTap: () =>
-                        Provider.of<StateProvider>(context, listen: false)
-                            .toggleColor(),
-                    borderRadius: BorderRadius.circular(50),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Icon(
-                        provider.isDark
-                            ? LineAwesomeIcons.sun
-                            : LineAwesomeIcons.moon_1,
-                        color: provider.colorPalette.thirdColor,
-                        size: 26,
-                      ),
-                    ),
-                  ),
+                AnimateIcons(
+                  startIcon: provider.isDark
+                      ? LineAwesomeIcons.sun
+                      : LineAwesomeIcons.moon_1,
+                  endIcon: !provider.isDark
+                      ? LineAwesomeIcons.moon_1
+                      : LineAwesomeIcons.sun,
+                  controller: iconController,
+                  startTooltip: provider.isDark ? 'Sun' : 'Moon',
+                  endTooltip: !provider.isDark ? 'Moon' : 'Sun',
+                  onStartIconPress: () {
+                    Provider.of<StateProvider>(context, listen: false)
+                        .toggleColor();
+                    return true;
+                  },
+                  onEndIconPress: () {
+                    Provider.of<StateProvider>(context, listen: false)
+                        .toggleColor();
+                    return true;
+                  },
+                  duration: const Duration(milliseconds: 500),
+                  startIconColor: provider.colorPalette.thirdColor,
+                  endIconColor: provider.colorPalette.thirdColor,
+                  clockwise: false,
                 ),
+                // Material(
+                //   color: provider.colorPalette.backgroundColor,
+                //   borderRadius: BorderRadius.circular(50),
+                //   child: InkWell(
+                //     onTap: () =>
+                //         Provider.of<StateProvider>(context, listen: false)
+                //             .toggleColor(),
+                //     borderRadius: BorderRadius.circular(50),
+                //     child: Padding(
+                //       padding: const EdgeInsets.all(8.0),
+                //       child: Icon(
+                //         provider.isDark
+                //             ? LineAwesomeIcons.sun
+                //             : LineAwesomeIcons.moon_1,
+                //         color: provider.colorPalette.thirdColor,
+                //         size: 26,
+                //       ),
+                //     ),
+                //   ),
+                // ),
                 const SizedBox(width: 5),
                 if (mediaData.size.width >= 768)
                   CustomTextButton(

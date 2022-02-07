@@ -26,8 +26,6 @@ class SkillsWidget extends StatefulWidget {
 String selectedCategory = "All";
 late List<Skill> filtredList;
 
-final controller = ScrollController();
-
 class _SkillsWidgetState extends State<SkillsWidget> {
   @override
   void initState() {
