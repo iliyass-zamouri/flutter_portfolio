@@ -25,36 +25,39 @@ class EducationCard extends StatelessWidget {
               child: Icon(LineAwesomeIcons.school,
                   color: provider.colorPalette.thirdColor)),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                school.name,
-                style: Styles.tileTitle.copyWith(
-                  color: provider.colorPalette.thirdColor,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              const SizedBox(height: 5),
-              Text(
-                school.field,
-                style: Styles.tileTitle.copyWith(
+        Flexible(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  school.name,
+                  style: Styles.tileTitle.copyWith(
                     color: provider.colorPalette.thirdColor,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14),
-              ),
-              const SizedBox(height: 5),
-              Text(
-                "${school.startTime} - ${school.graduation}",
-                style: Styles.tileTitle.copyWith(
-                    color: provider.colorPalette.thirdColor.withOpacity(0.6),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12),
-              ),
-            ],
+                    height: 1.2,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  school.field,
+                  style: Styles.tileTitle.copyWith(
+                      color: provider.colorPalette.thirdColor.withOpacity(0.9),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  "${school.startTime} - ${school.graduation}",
+                  style: Styles.tileTitle.copyWith(
+                      color: provider.colorPalette.thirdColor.withOpacity(0.8),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12),
+                ),
+              ],
+            ),
           ),
         )
       ],

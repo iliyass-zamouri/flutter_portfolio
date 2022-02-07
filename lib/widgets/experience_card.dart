@@ -17,36 +17,41 @@ class ExperienceCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image.network(enterprise.imageURL, width: 60, height: 60),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                enterprise.post,
-                style: Styles.tileTitle.copyWith(
-                  color: provider.colorPalette.thirdColor,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              const SizedBox(height: 5),
-              Text(
-                "${enterprise.name} · ${enterprise.contract.getName()}",
-                style: Styles.tileTitle.copyWith(
+        Flexible(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  enterprise.post,
+                  // overflow: TextOverflow.ellipsis,
+
+                  style: Styles.tileTitle.copyWith(
+                    height: 1.2,
                     color: provider.colorPalette.thirdColor,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14),
-              ),
-              const SizedBox(height: 5),
-              Text(
-                "${enterprise.startTime} - ${enterprise.endTime} · ${enterprise.duration}",
-                style: Styles.tileTitle.copyWith(
-                    color: provider.colorPalette.thirdColor.withOpacity(0.6),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12),
-              ),
-            ],
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  "${enterprise.name} · ${enterprise.contract.getName()}",
+                  style: Styles.tileTitle.copyWith(
+                      color: provider.colorPalette.thirdColor.withOpacity(0.9),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  "${enterprise.startTime} - ${enterprise.endTime} · ${enterprise.duration}",
+                  style: Styles.tileTitle.copyWith(
+                      color: provider.colorPalette.thirdColor.withOpacity(0.8),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12),
+                ),
+              ],
+            ),
           ),
         )
       ],

@@ -39,7 +39,7 @@ class _AboutScreenState extends State<AboutScreen> {
     return Container(
       color: provider.colorPalette.backgroundColor,
       margin: EdgeInsets.symmetric(
-          horizontal: mediaData.size.width >= 720 ? 200 : 0),
+          horizontal: _responsiveWidth(mediaData.size.width)),
       child: SizedBox(
         height: mediaData.size.height,
         child: Column(
@@ -183,6 +183,20 @@ class _AboutScreenState extends State<AboutScreen> {
         ),
       ),
     );
+  }
+
+  double _responsiveWidth(width) {
+    if (width < 480) {
+      return 0;
+    } else if (width < 768) {
+      return 0;
+    } else if (width < 1024) {
+      return width * 0.1;
+    } else if (width > 1025) {
+      return width * 0.2;
+    } else {
+      return 0;
+    }
   }
 
   @override
