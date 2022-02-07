@@ -238,7 +238,7 @@ List<Project> projects = [
       startDate: "Feb 2022",
       url: "https://www.iliyass-zamouri.ga",
       description:
-          "Flutter Web targeted App, With reqponsive design and beautiful UI, And good UX.\n\nYou are currently viewing it 🙂."),
+          "Flutter Web targeted App, With responsive design and beautiful UI, And good UX.\n\nYou are currently viewing it 🙂."),
   Project(
       name: "Flutter Agenda (Dart Plugin)",
       startDate: "Feb 2022",

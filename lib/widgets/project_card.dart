@@ -50,6 +50,7 @@ class ProjectCard extends StatelessWidget {
                       width: 35,
                       height: 35,
                       child: Icon(LineAwesomeIcons.school)),
+                  const SizedBox(width: 5),
                   Expanded(
                     child: SizedBox(
                       child: Text(
@@ -82,6 +83,7 @@ class ProjectCard extends StatelessWidget {
                       ),
                     ),
                   ),
+                  const SizedBox(width: 5),
                   Expanded(
                     child: SizedBox(
                       child: Text(
