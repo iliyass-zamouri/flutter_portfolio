@@ -86,45 +86,59 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.w200,
                   letterSpacing: 1.2),
             ),
-          ],
-        ),
-      ),
-      Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  "Know more about me".toUpperCase(),
-                  style: Styles.title.copyWith(
-                      color: provider.colorPalette.thirdColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w200,
-                      letterSpacing: 1.1),
-                ),
-                Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: Icon(
-                      Icons.south,
-                      color: provider.colorPalette.thirdColor,
-                    )),
-                CustomTextButton(
-                  text: "About Me",
+
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              child: FittedBox(
+                child: CustomTextButton(
+                  text: "Resume",
                   onClick: () => showModalBottomSheet(
                       context: context,
                       isScrollControlled: true,
                       backgroundColor: Colors.transparent,
                       builder: (context) => const AboutScreen()),
                 ),
-              ],
-            ),
+              ),
+            )
           ],
         ),
-      )
+      ),
+      // Center(
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     crossAxisAlignment: CrossAxisAlignment.center,
+      //     children: [
+      //       Column(
+      //         mainAxisAlignment: MainAxisAlignment.center,
+      //         crossAxisAlignment: CrossAxisAlignment.center,
+      //         children: [
+      //           Text(
+      //             "Know more about me".toUpperCase(),
+      //             style: Styles.title.copyWith(
+      //                 color: provider.colorPalette.thirdColor,
+      //                 fontSize: 18,
+      //                 fontWeight: FontWeight.w200,
+      //                 letterSpacing: 1.1),
+      //           ),
+      //           Padding(
+      //               padding: const EdgeInsets.all(5),
+      //               child: Icon(
+      //                 Icons.south,
+      //                 color: provider.colorPalette.thirdColor,
+      //               )),
+      //           CustomTextButton(
+      //             text: "About Me",
+      //             onClick: () => showModalBottomSheet(
+      //                 context: context,
+      //                 isScrollControlled: true,
+      //                 backgroundColor: Colors.transparent,
+      //                 builder: (context) => const AboutScreen()),
+      //           ),
+      //         ],
+      //       ),
+      //     ],
+      //   ),
+      // )
     ];
     return Material(
       color: provider.colorPalette.backgroundColor,
@@ -141,35 +155,36 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(
                         color: provider.colorPalette.backgroundColor),
                     width: mediaData.size.width,
-                    child: Swiper(
-                      containerHeight: mediaData.size.height - 30,
-                      itemBuilder: (BuildContext context, int index) {
-                        return swiperItems[index];
-                      },
-                      itemCount: 2,
-                      controller: swiperController,
-                      control: const SwiperControl(
-                          color: Colors.transparent,
-                          disableColor: Colors.transparent),
-                    ),
+                    child: swiperItems[0],
+                    // child: Swiper(
+                    //   containerHeight: mediaData.size.height - 30,
+                    //   itemBuilder: (BuildContext context, int index) {
+                    //     return swiperItems[index];
+                    //   },
+                    //   itemCount: 1,
+                    //   controller: swiperController,
+                    //   control: const SwiperControl(
+                    //       color: Colors.transparent,
+                    //       disableColor: Colors.transparent),
+                    // ),
                   ),
                 ),
               ],
             ),
-            Positioned(
-                right: 5,
-                child: CustomIconButton(
-                  icon: CupertinoIcons.chevron_right,
-                  isBlended: true,
-                  onTap: () => swiperController.next(),
-                )),
-            Positioned(
-                left: 5,
-                child: CustomIconButton(
-                  icon: CupertinoIcons.chevron_left,
-                  isBlended: true,
-                  onTap: () => swiperController.previous(),
-                )),
+            // Positioned(
+            //     right: 5,
+            //     child: CustomIconButton(
+            //       icon: CupertinoIcons.chevron_right,
+            //       isBlended: true,
+            //       onTap: () => swiperController.next(),
+            //     )),
+            // Positioned(
+            //     left: 5,
+            //     child: CustomIconButton(
+            //       icon: CupertinoIcons.chevron_left,
+            //       isBlended: true,
+            //       onTap: () => swiperController.previous(),
+            //     )),
             Positioned(
               bottom: 0,
               right: 0,
@@ -300,16 +315,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 //     ),
                 //   ),
                 // ),
-                const SizedBox(width: 5),
-                if (mediaData.size.width >= 768)
-                  CustomTextButton(
-                    text: "About Me",
-                    onClick: () => showModalBottomSheet(
-                        context: context,
-                        isScrollControlled: true,
-                        backgroundColor: Colors.transparent,
-                        builder: (context) => const AboutScreen()),
-                  )
+                // const SizedBox(width: 5),
+                // if (mediaData.size.width >= 768)
+                //   CustomTextButton(
+                //     text: "About Me",
+                //     onClick: () => showModalBottomSheet(
+                //         context: context,
+                //         isScrollControlled: true,
+                //         backgroundColor: Colors.transparent,
+                //         builder: (context) => const AboutScreen()),
+                //   )
               ],
             )
           ],

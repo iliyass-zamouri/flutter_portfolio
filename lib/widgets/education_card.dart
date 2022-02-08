@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/models/enterprise.dart';
 import 'package:flutter_portfolio/models/school.dart';
 import 'package:flutter_portfolio/state_provider.dart';
 import 'package:flutter_portfolio/styles/styles.dart';
@@ -12,7 +11,6 @@ class EducationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaData = MediaQuery.of(context);
     StateProvider provider = Provider.of<StateProvider>(context, listen: true);
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,

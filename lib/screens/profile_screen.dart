@@ -27,9 +27,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     provider = Provider.of<StateProvider>(context, listen: true);
     mediaData = MediaQuery.of(context);
-    return Container(
+    return SizedBox(
       height: mediaData.size.height - 31,
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      // margin: const EdgeInsets.symmetric(vertical: 10),
       child: ImprovedScrolling(
         scrollController: _controller,
         enableMMBScrolling: true,
@@ -57,6 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
                 children: [
+                  const SizedBox(height: 10),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     width: mediaData.size.width <= 768

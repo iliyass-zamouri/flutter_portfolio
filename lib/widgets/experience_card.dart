@@ -11,7 +11,6 @@ class ExperienceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaData = MediaQuery.of(context);
     StateProvider provider = Provider.of<StateProvider>(context, listen: true);
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,

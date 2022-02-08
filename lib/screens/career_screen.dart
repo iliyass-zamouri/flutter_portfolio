@@ -8,7 +8,6 @@ import 'package:flutter_portfolio/widgets/box_container_extended.dart';
 import 'package:flutter_portfolio/widgets/education_card.dart';
 import 'package:flutter_portfolio/widgets/experience_card.dart';
 import 'package:flutter_portfolio/widgets/project_card.dart';
-import 'package:flutter_portfolio/widgets/responsive_list.dart';
 import 'package:flutter_portfolio/extentions.dart';
 import 'package:provider/provider.dart';
 
@@ -31,7 +30,7 @@ class _CareerScreenState extends State<CareerScreen> {
     mediaData = MediaQuery.of(context);
     return Container(
       height: mediaData.size.height - 31,
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
       child: ImprovedScrolling(
         scrollController: _controller,
         enableMMBScrolling: true,
@@ -58,6 +57,7 @@ class _CareerScreenState extends State<CareerScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: [
+                const SizedBox(height: 10),
                 Flex(direction: Axis.vertical, children: [
                   ExtendedBoxContainer(
                       title: "Education",
