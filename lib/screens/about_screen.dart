@@ -8,7 +8,8 @@ import 'package:flutter_portfolio/widgets/text_button.dart';
 import 'package:provider/provider.dart';
 
 class AboutScreen extends StatefulWidget {
-  const AboutScreen({Key? key}) : super(key: key);
+  int? indexPassed;
+  AboutScreen({Key? key, this.indexPassed = 0}) : super(key: key);
 
   @override
   State<AboutScreen> createState() => _AboutScreenState();
@@ -18,6 +19,9 @@ class _AboutScreenState extends State<AboutScreen> {
   @override
   void initState() {
     super.initState();
+    pageController = PageController(initialPage: widget.indexPassed!);
+    currentIndex = widget.indexPassed!;
+
     pageController.addListener(() {
       if (pageController.page!.round() != currentIndex) {
         setState(() {
@@ -29,8 +33,8 @@ class _AboutScreenState extends State<AboutScreen> {
 
   late StateProvider provider;
   late MediaQueryData mediaData;
-  final PageController pageController = PageController();
-  int currentIndex = 0;
+  late PageController pageController;
+  late int currentIndex;
 
   @override
   Widget build(BuildContext context) {

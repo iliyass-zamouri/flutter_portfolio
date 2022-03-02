@@ -96,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       context: context,
                       isScrollControlled: true,
                       backgroundColor: Colors.transparent,
-                      builder: (context) => const AboutScreen()),
+                      builder: (context) => AboutScreen()),
                 ),
               ),
             )
@@ -224,22 +224,22 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    border: Border.all(
-                        color: provider.colorPalette.thirdColor, width: 2),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(50),
-                    child: Image.network(
-                      user.imageURL,
-                      height: 40,
-                      width: 40,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 5),
+                // Container(
+                //   decoration: BoxDecoration(
+                //     borderRadius: BorderRadius.circular(50),
+                //     border: Border.all(
+                //         color: provider.colorPalette.thirdColor, width: 2),
+                //   ),
+                //   child: ClipRRect(
+                //     borderRadius: BorderRadius.circular(50),
+                //     child: Image.network(
+                //       user.imageURL,
+                //       height: 40,
+                //       width: 40,
+                //     ),
+                //   ),
+                // ),
+                // const SizedBox(width: 5),
                 Padding(
                   padding: const EdgeInsets.only(top: 4),
                   child: Column(
@@ -270,6 +270,47 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Row(
               children: [
+                if (mediaData.size.width >= 768)
+                  for (int i = 0; i < aboutMenu.length; i++) ...[
+                    CustomTextButton(
+                        text: aboutMenu[i],
+                        mainColor: Colors.transparent,
+                        textColor: provider.colorPalette.thirdColor,
+                        onClick: () => showModalBottomSheet(
+                            context: context,
+                            isScrollControlled: true,
+                            backgroundColor: Colors.transparent,
+                            builder: (context) => AboutScreen(indexPassed: i))),
+                    const SizedBox(width: 5),
+                  ],
+                if (mediaData.size.width < 768)
+                  PopupMenuButton<String>(
+                      color: provider.colorPalette.secondColor,
+                      elevation: 2,
+                      enabled: true,
+                      icon: Icon(Icons.more_vert,
+                          color: provider.colorPalette.thirdColor),
+                      onSelected: (value) {
+                        final int index = aboutMenu.indexOf(value);
+                        showModalBottomSheet(
+                            context: context,
+                            isScrollControlled: true,
+                            backgroundColor: Colors.transparent,
+                            builder: (context) =>
+                                AboutScreen(indexPassed: index));
+                      },
+                      itemBuilder: (context) {
+                        return aboutMenu.map((choice) {
+                          return PopupMenuItem(
+                            value: choice,
+                            child: Text(
+                              choice,
+                              style: Styles.tileTitle.copyWith(
+                                  color: provider.colorPalette.thirdColor),
+                            ),
+                          );
+                        }).toList();
+                      }),
                 AnimateIcons(
                   startIcon: provider.isDark
                       ? LineAwesomeIcons.sun
