@@ -159,7 +159,7 @@ List<SocialMedia> sites = const [
 ];
 
 String aboutMe =
-    "I am an Software Project Designer, Consultant in Software Development Technologies. Web Application developer (Full Stack) and Mobile Application Developer with two years experience in the Flutter mobile framework (IOS/Android). Experienced in UI/UX.";
+    "I am a Software Project Designer, Consultant in Software Development Technologies. Web Application Developer (Full-Stack) and Mobile Application Developer with two years experience in the Flutter mobile framework (IOS/Android). Experienced in UI/UX.";
 
 String whatIdo = "Web & Mobile";
 
