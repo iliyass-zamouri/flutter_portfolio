@@ -23,8 +23,9 @@ class ExperienceCard extends StatelessWidget {
                     color: provider.colorPalette.thirdColor.withOpacity(0.1))),
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child:
-                    Image.network(enterprise.imageURL, width: 60, height: 60))),
+                child: enterprise.imageURL.contains('https')
+                    ? Image.network(enterprise.imageURL, width: 60, height: 60)
+                    : Image.asset(enterprise.imageURL, width: 60, height: 60))),
         Flexible(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),

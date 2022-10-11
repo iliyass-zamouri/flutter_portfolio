@@ -170,8 +170,7 @@ List<String> aboutMenu = ["Profile", "Career", "Contact"];
 List<Enterprise> workedAt = [
   Enterprise(
       name: "IM-CREATIVE",
-      imageURL:
-          "https://media-exp1.licdn.com/dms/image/C4D0BAQEaSrVdIHGXgw/company-logo_200_200/0/1618918702222?e=1652313600&v=beta&t=vlPjeq-Co8xZ8dm1JTaqvnp4ZF1JlvhPCkrN2ncmsvM",
+      imageURL: "images/creativespace.jpg",
       post: "Web Application Developer",
       description:
           "Web development with laravel.\n\nDeveloped a realtime chatbox with Laravel (backend), Vuejs (Frontend) in a laravel project.\n\nDevelop a mobile version of the same chatbox in a flutter app.\n\nSetup an API to connect the mobile chatbox with the Web version.",
@@ -180,20 +179,19 @@ List<Enterprise> workedAt = [
       duration: "1 mo"),
   Enterprise(
       name: "Rhéo Services",
-      imageURL:
-          "https://media-exp1.licdn.com/dms/image/C4D03AQH45z4JaVfYFQ/profile-displayphoto-shrink_800_800/0/1617474633389?e=1649894400&v=beta&t=VfEto45nXgnJglWVZwELv-K3i-bkW-OvbSLpx2Yfg9Y",
+      imageURL: "images/rheo.jpg",
       post: "Mobile Software Developer",
       contract: ContractType.freelance,
       startTime: "July 2021",
       duration: "6 mo"),
   Enterprise(
       name: "Nativys",
-      imageURL:
-          "https://media-exp1.licdn.com/dms/image/C560BAQHObfYQyzaTrg/company-logo_200_200/0/1626983535628?e=1652313600&v=beta&t=ovGp6oNC16-MDLeOGPeHlWxH2REEvfWzsygBHNlgQ7c",
+      imageURL: "images/nativys.jpg",
       post: "Mobile Software Developer",
       description:
           "Developing, Managing & Maintaining two mobile apps.\n\nNativys: App for clients to help them make a reservation in a beauty institution.\n\nNativys Pro: Mobile CRM for professionals in the beauty centers industry to help them manage their clients, reservations and revenue.",
       startTime: "Oct 2021",
+      endTime: "May 2022",
       duration: "5 mo"),
   Enterprise(
       name: "Flutter Community",
@@ -205,6 +203,15 @@ List<Enterprise> workedAt = [
           "Developing and publishing packages & dependencies to the official Dart API (pub.dev).",
       startTime: "Jan 2022",
       duration: "2 mo"),
+  Enterprise(
+      name: "Nativys",
+      imageURL: "images/nativys.jpg",
+      contract: ContractType.fulltime,
+      post: "Senior Software Developer",
+      description:
+          "Developing, Managing & Maintaining two mobile apps.\n\n Developing & Maintaining two web applications.",
+      startTime: "May 2022",
+      duration: "6 mo"),
 ];
 
 List<School> education = [
